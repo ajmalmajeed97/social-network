@@ -1,6 +1,6 @@
 module.exports={
-    MONGOURI:process.env.MOGOURI,
-    JWT_SECRET:process.env.JWT_SEC,
-    SENDGRID_API:process.env.SENDGRID_API,
+    MONGOURI:'mongodb+srv://ajmal:ajmalmajeed@cluster0.wyuag.mongodb.net/social?retryWrites=true&w=majority',
+    JWT_SECRET:'ajmal',
+    SENDGRID_API:'sayoojvimal567',
     EMAIL:process.env.EMAIL
 }
