@@ -5,20 +5,13 @@ const PORT = process.env.PORT || 8080
 const {MONGOURI} = require('./config/keys')
 
 
-mongoose.connect(MONGOURI,{
-    useNewUrlParser:true,
-    useUnifiedTopology: true
-
-})
-mongoose.connection.on('connected',()=>{
-    console.log("conneted to mongo ")
+mongoose.connect(MONGOURI,{ useNewUrlParser:true, useUnifiedTopology: true})
+mongoose.connection.on('connected',()=>{console.log("conneted to mongodb ")
 })
 mongoose.connection.on('error',(err)=>{
-    console.log("err connecting",err)
+    console.log("not connected",err)
 })
 
-require('./models/user')
-require('./models/post')
 
 app.use(express.json())
 app.use(require('./routes/auth'))

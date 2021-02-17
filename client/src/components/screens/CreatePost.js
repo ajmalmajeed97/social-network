@@ -4,7 +4,6 @@ import {useHistory} from 'react-router-dom'
 const CretePost = ()=>{
     const history = useHistory()
     const [title,setTitle] = useState("")
-    const [body,setBody] = useState("")
     const [image,setImage] = useState("")
     const [url,setUrl] = useState("")
     useEffect(()=>{
@@ -17,7 +16,6 @@ const CretePost = ()=>{
             },
             body:JSON.stringify({
                 title,
-                body,
                 pic:url
             })
         }).then(res=>res.json())
@@ -72,12 +70,6 @@ const CretePost = ()=>{
             value={title}
             onChange={(e)=>setTitle(e.target.value)}
             />
-           <input
-            type="text"
-             placeholder="body"
-             value={body}
-            onChange={(e)=>setBody(e.target.value)}
-             />
            <div className="file-field input-field">
             <div className="btn #64b5f6 blue darken-1">
                 <span>Uplaod Image</span>

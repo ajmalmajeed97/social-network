@@ -6,6 +6,7 @@ const Profile  = ()=>{
     
     const {state,dispatch} = useContext(UserContext)
     const {userid} = useParams()
+    
     const [showfollow,setShowFollow] = useState(state?!state.following.includes(userid):true)
     useEffect(()=>{
        fetch(`/user/${userid}`,{
@@ -14,8 +15,6 @@ const Profile  = ()=>{
            }
        }).then(res=>res.json())
        .then(result=>{
-           //console.log(result)
-         
             setProfile(result)
        })
     },[])
